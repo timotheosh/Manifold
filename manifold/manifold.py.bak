@@ -24,7 +24,7 @@ import sys
 from genshi.template import MarkupTemplate
 
 # - Project Modules -
-from .release import version
+from release import version
 
 
 # ---- Genshi Templates ----
@@ -177,11 +177,11 @@ class CONFIG_STR(CONFIG_BASE):
     def ask(self, config):
         r = None
         while r is None or (self.require_value and not r):
-            r = input(self.prompt()).strip()
+            r = raw_input(self.prompt()).strip()
             if not r and self.default is not None:
                 r = self.default
             elif self.accepted_values and r not in self.accepted_values:
-                print("Sorry, you must enter one of: " + ', '.join(['"%s"'%s for s in self.accepted_values]))
+                print "Sorry, you must enter one of: " + ', '.join(['"%s"'%s for s in self.accepted_values])
                 r = None
         if not r:
             r = None
@@ -213,8 +213,8 @@ class CONFIG_BOOL(CONFIG_BASE):
             n = False
         )
         r = None
-        while not r in list(answers.keys()) and r != '':
-            r = input(self.prompt()).strip().lower()
+        while not r in answers.keys() and r != '':
+            r = raw_input(self.prompt()).strip().lower()
         
         if r:
             r = answers[r]
@@ -259,8 +259,8 @@ class CONFIG_IF(CONFIG_BASE):
             n = False
         )
         r = None
-        while not r in list(answers.keys()) and r != '':
-            r = input(self.prompt()).strip().lower()
+        while not r in answers.keys() and r != '':
+            r = raw_input(self.prompt()).strip().lower()
         
         if r:
             r = answers[r]
@@ -280,7 +280,7 @@ def ask_user(service_questions):
     response = {}
     
     for q in service_questions:
-        print()
+        print
         response[q.name] = q.ask(response)
     return response
 
@@ -458,9 +458,9 @@ For example, "svccfg validate myservice.xml", "svccfg -v import myservice.xml".
     
     output.close()
     
-    print("\nManifest written to %s" %output_filename)
-    print('You can validate the XML file with "svccfg validate %s"' %output_filename)
-    print('And create the SMF service with "svccfg import %s"' %output_filename)
+    print "\nManifest written to %s" %output_filename
+    print 'You can validate the XML file with "svccfg validate %s"' %output_filename
+    print 'And create the SMF service with "svccfg import %s"' %output_filename
     
     return 0
 
