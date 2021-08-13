@@ -1,0 +1,21 @@
+Metadata-Version: 1.0
+Name: Manifold
+Version: 0.2.0
+Summary: An SMF service manifest creation tool.
+Home-page: http://code.google.com/p/manifold/
+Author: Chris Miles
+Author-email: miles.chris@gmail.com
+License: MIT
+Description: A command-line tool to simplify creating custom service manifests for
+        SMF on Solaris systems.
+        
+Keywords: SMF manifest XML
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX :: SunOS/Solaris
+Classifier: Programming Language :: Python
+Classifier: Topic :: System :: Systems Administration
+Classifier: Topic :: Utilities
