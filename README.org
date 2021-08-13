@@ -1,8 +1,18 @@
 * Manifold
+** Description
 Python library for creating Solaris SMF manifest files (for starting and stopping services on Solaris-like OSes).
 
-** To be done
-Rewrite for Python 3. We'll see how far 2to3.py will take us.
+Rewritten for Python 3.
+** Usage
+Download and run
+#+begin_example
+git clone https://github.com/timotheosh/Manifold.git
+cd Manifold
+python3 setup.py install
+manifold output.xml
+#+end_example
+and follow he prompts.
 
+Tested and currently using on OmniOS r151038
 ** Original Work
 Original project was for Python 2, and has not been worked on since 2009. You can find it [[https://code.google.com/archive/p/manifold/][here]]. 
